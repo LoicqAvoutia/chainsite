@@ -7,10 +7,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js"
+    "start": "node --env-file=.env.sample index.js",
+    "dev": "node --env-file=.env.sample --watch index.js"
   },
   "dependencies": {
+    "dotenv": "^18.0.4",
     "express": "^5.2.1",
     "mysql2": "^3.24.4"
   }

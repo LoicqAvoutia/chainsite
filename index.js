@@ -2,8 +2,10 @@ import express from 'express'
 import { router } from './control/router.js'
 import { notfound } from './middlewears/notfound.js'
 import { errorhandler } from './middlewears/404.js'
-const app = express()
-const port = 3000
+import { varambient } from './env.js'
+
+const app = express();
+const port = varambient.SERVER_PORT;
 
 app.use('/',router);
 app.use(notfound);

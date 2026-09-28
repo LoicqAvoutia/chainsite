@@ -1,10 +1,11 @@
 import mysql from 'mysql2/promise.js';
+import { varambient } from '../env.js';
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: 'dblocal',
-    database: "chaindb",
+    host: varambient.DB_HOST,
+    user: varambient.DB_USER,
+    password: varambient.DB_PASSWORD,
+    database: varambient.DB_DATABASE,
     connectionLimit: 10
 });
 
