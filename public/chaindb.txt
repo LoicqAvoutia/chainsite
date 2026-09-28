@@ -1,0 +1,24 @@
+CREATE DATABASE chaindb;
+USE chaindb;
+
+CREATE TABLE `gioielli`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `nome` VARCHAR(255) NOT NULL,
+    `prezzo` FLOAT(53) NOT NULL,
+    `spessore` TINYINT UNSIGNED NOT NULL,
+    `carati` TINYINT UNSIGNED NOT NULL,
+    `img` VARCHAR(255) NOT NULL
+);
+ALTER TABLE
+    `gioielli` ADD INDEX `gioielli_nome_index`(`nome`);
+ALTER TABLE
+    `gioielli` ADD INDEX `gioielli_prezzo_index`(`prezzo`);
+ALTER TABLE
+    `gioielli` ADD INDEX `gioielli_carati_index`(`carati`);
+
+INSERT INTO gioielli (id,nome,prezzo,spessore,carati,img) VALUES
+(1,'CATENA CUBANA',100,2,18,'../public/img/img-1'),
+(2,'CATENA CUBANA',100,2,18,'../public/img/img-2'),
+(3,'CATENA CUBANA',100,2,18,'../public/img/img-3'),
+(4,'CATENA CUBANA',100,2,18,'../public/img/img-4'),
+(5,'CATENA CUBANA',100,2,18,'../public/img/img-5');
